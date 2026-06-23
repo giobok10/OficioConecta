@@ -13,4 +13,15 @@ const crearProfesional = async (datos) => {
   return rows;
 };
 
-module.exports = { crearProfesional };
+const buscarProfesionales = async (termino) => {
+  const query = `
+    SELECT * FROM profesionales 
+    WHERE oficio ILIKE $1 OR nombre_completo ILIKE $1;
+  `;
+  // El comodín % permite buscar partes de la palabra
+  const values = [`%${termino || ''}%` || '%']; 
+  const { rows } = await db.query(query, values);
+  return rows;
+};
+
+module.exports = { crearProfesional, buscarProfesionales };

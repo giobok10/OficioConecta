@@ -17,4 +17,14 @@ const registrar = async (req, res) => {
   }
 };
 
-module.exports = { registrar };
+const buscar = async (req, res) => {
+  try {
+    const { q } = req.query; // Recibe el término desde la URL: ?q=plomero
+    const profesionales = await profesionalService.buscarProfesionales(q);
+    res.status(200).json(profesionales);
+  } catch (error) {
+    res.status(500).json({ message: 'Error al realizar la búsqueda' });
+  }
+};
+
+module.exports = { registrar, buscar };
