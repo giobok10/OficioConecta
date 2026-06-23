@@ -10,8 +10,8 @@ RUN npm install -g pnpm
 # Copiamos solo los archivos de dependencias para aprovechar el caché de capas
 COPY package.json pnpm-lock.yaml* ./
 
-# Instalamos dependencias
-RUN pnpm install
+# Instalamos solo dependencias de producción
+RUN pnpm install --frozen-lockfile --prod
 
 # Copiamos el resto del código asignando propiedad al usuario no-root 'node'
 COPY --chown=node:node . .
@@ -21,6 +21,8 @@ USER node
 
 # Exponemos el puerto que definimos en app.js
 EXPOSE 3000
+
+ENV NODE_ENV=production
 
 # Comando para iniciar
 CMD ["pnpm", "start"]
