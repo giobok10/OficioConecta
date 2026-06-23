@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg-body: #252525;
+  /* Fondo principal (Oscuro profundo) */
+  --bg-card: #545454;
+  /* Fondo de tarjetas (Gris medio) */
+  --text-main: #CFCFCF;
+  /* Texto principal (Gris muy claro) */
+  --text-muted: #CFCFCF;
+  /* Texto secundario (Gris balanceado) */
+  --border: #7D7D7D;
+  /* Bordes */
+  --primary: #7D7D7D;
+  /* Botones */
+  --primary-hover: #545454;
+  /* Hover botones */
+  --input-bg: #CFCFCF;
+  /* Fondo de inputs */
+  --input-text: #252525;
+  /* Texto dentro de inputs */
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-body);
+  color: var(--text-main);
+  line-height: 1.5;
+  font-size: 14px;
+  /* Reduce el zoom general */
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}

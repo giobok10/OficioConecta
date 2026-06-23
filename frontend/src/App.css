@@ -1,0 +1,219 @@
+/* Metodología BEM + UI Minimalista Gris */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1.5rem;
+  width: 100%;
+  max-width: 1100px; /* Más ancho para permitir lado a lado */
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--text-main);
+  letter-spacing: -0.02em;
+}
+
+/* Contenedor lado a lado */
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Desktop: Lado a lado */
+@media (min-width: 768px) {
+  .content-wrapper {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .section-registro, .section-busqueda {
+    flex: 1;
+  }
+}
+
+/* Forms y Secciones */
+.section-registro {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.registro-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.registro-form__title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text-main);
+}
+
+.registro-form__input, .search-bar__input {
+  background: var(--input-bg);
+  border: 1px solid var(--border);
+  color: var(--input-text);
+  padding: 10px 12px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-family: inherit;
+  transition: border-color 0.2s ease;
+  width: 100%;
+}
+
+.registro-form__input::placeholder, .search-bar__input::placeholder {
+  color: #4b5563;
+}
+
+.registro-form__input:focus, .search-bar__input:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+textarea.registro-form__input {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.registro-form__button {
+  background: var(--primary);
+  color: #ffffff;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-top: 0.5rem;
+}
+
+.registro-form__button:hover {
+  background: var(--primary-hover);
+}
+
+.registro-form__mensaje {
+  margin: 0;
+  font-size: 0.85rem;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+.registro-form__mensaje--ok {
+  background: #ecfdf5;
+  color: #059669;
+  border: 1px solid #a7f3d0;
+}
+
+.registro-form__mensaje--error {
+  background: #fef2f2;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+}
+
+/* Busqueda */
+.section-busqueda h2 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.search-bar {
+  margin-bottom: 1.5rem;
+}
+
+/* Listado de Resultados */
+.resultados-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.no-results {
+  color: var(--text-muted);
+  text-align: center;
+  padding: 1.5rem;
+  background: var(--bg-card);
+  border-radius: 8px;
+  border: 1px dashed var(--border);
+  font-size: 0.9rem;
+}
+
+.profesional-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 1.25rem;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.profesional-card__name {
+  font-size: 1.1rem;
+  color: var(--text-main);
+  font-weight: 600;
+  margin: 0 0 0.25rem 0;
+}
+
+.profesional-card__oficio {
+  color: var(--text-main);
+  font-weight: 500;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.profesional-card__contacto {
+  color: var(--text-main);
+  background: var(--bg-body);
+  padding: 0.4rem 0.6rem;
+  border-radius: 4px;
+  display: inline-block;
+  width: fit-content;
+  font-size: 0.85rem;
+  border: 1px solid var(--border);
+}
+
+.profesional-card__ubicacion {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.profesional-card__descripcion {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+  line-height: 1.4;
+  border-top: 1px solid var(--border);
+  padding-top: 0.75rem;
+}
+
+/* Ajustes Responsive Mobile */
+@media (max-width: 767px) {
+  .app-container {
+    padding: 1rem;
+  }
+  .content-wrapper {
+    gap: 1.5rem;
+  }
+  .header h1 {
+    font-size: 1.5rem;
+  }
+  .section-registro {
+    padding: 1rem;
+  }
+}

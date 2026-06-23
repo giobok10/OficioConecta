@@ -1,0 +1,95 @@
+# ==============================
+# Dependencias (Node.js / pnpm)
+# ==============================
+node_modules/
+**/node_modules/
+.pnpm-store/
+.npm/
+.yarn/
+
+# Lock files (descomenta si NO quieres versionarlos)
+# package-lock.json
+# pnpm-lock.yaml
+# yarn.lock
+
+# ==============================
+# Variables de entorno (Seguridad)
+# ==============================
+.env
+.env.*
+!.env.example
+backend/.env
+frontend/.env
+
+# ==============================
+# Build / Compilación
+# ==============================
+dist/
+build/
+out/
+.next/
+.nuxt/
+frontend/dist/
+coverage/
+
+# ==============================
+# Cache (React / Vite / Bundlers)
+# ==============================
+.vite/
+.parcel-cache/
+.cache/
+.eslintcache
+*.tsbuildinfo
+
+# ==============================
+# Logs
+# ==============================
+*.log
+logs/
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ==============================
+# Testing
+# ==============================
+coverage/
+.nyc_output/
+
+# ==============================
+# Editor / IDE
+# ==============================
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ==============================
+# Sistema Operativo
+# ==============================
+.DS_Store
+Thumbs.db
+
+# ==============================
+# Archivos temporales
+# ==============================
+tmp/
+temp/
+*.tmp
+
+# ==============================
+# Docker (si usas)
+# ==============================
+.dockerignore
+
+# ==============================
+# Deployment / Hosting
+# ==============================
+.vercel/
+.netlify/
+
+# ==============================
+# Misc
+# ==============================
+*.local
