@@ -13,8 +13,11 @@ COPY package.json pnpm-lock.yaml* ./
 # Instalamos dependencias
 RUN pnpm install
 
-# Copiamos el resto del código
-COPY . .
+# Copiamos el resto del código asignando propiedad al usuario no-root 'node'
+COPY --chown=node:node . .
+
+# Cambiamos al usuario no-root 'node' para mayor seguridad
+USER node
 
 # Exponemos el puerto que definimos en app.js
 EXPOSE 3000

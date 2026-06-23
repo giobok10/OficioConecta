@@ -1,82 +1,221 @@
-/* Metodología BEM: Block__Element--Modifier */
+/* Metodología BEM + Premium UI */
 .app-container {
   display: flex;
   flex-direction: column;
-  padding: 1rem;
-  max-width: 600px; /* Limite para pantallas grandes */
-  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  width: 100%;
+  max-width: 800px;
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #a855f7 0%, #3b82f6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.05em;
+  margin-bottom: 0.5rem;
+}
+
+/* Forms */
+.section-registro {
+  background: var(--surface);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 3rem;
+  box-shadow: var(--glass-shadow);
 }
 
 .registro-form {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  margin-bottom: 2rem;
+  gap: 1rem;
+}
+
+.registro-form__title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--text-main);
 }
 
 .registro-form__input, .search-bar__input {
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 8px; /* Bordes redondeados para estética moderna */
-  font-size: 16px; /* Evita zoom automático en iOS */
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border);
+  color: var(--text-main);
+  padding: 14px 16px;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.registro-form__input::placeholder, .search-bar__input::placeholder {
+  color: #64748b;
+}
+
+.registro-form__input:focus, .search-bar__input:focus {
+  outline: none;
+  border-color: var(--primary);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+}
+
+textarea.registro-form__input {
+  resize: vertical;
+  min-height: 100px;
 }
 
 .registro-form__button {
-  background-color: #007bff;
+  background: var(--primary);
   color: white;
-  padding: 12px;
+  padding: 14px;
   border: none;
-  border-radius: 8px;
-  font-weight: bold;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
   cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 0.5rem;
+}
+
+.registro-form__button:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.4);
+}
+
+.registro-form__button:active {
+  transform: translateY(0);
 }
 
 .registro-form__mensaje {
   margin: 0;
   font-size: 0.9rem;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 500;
 }
 
 .registro-form__mensaje--ok {
-  color: #198754;
+  background: rgba(16, 185, 129, 0.1);
+  color: var(--success);
+  border: 1px solid rgba(16, 185, 129, 0.2);
 }
 
 .registro-form__mensaje--error {
-  color: #dc3545;
+  background: rgba(239, 68, 68, 0.1);
+  color: var(--error);
+  border: 1px solid rgba(239, 68, 68, 0.2);
 }
 
-.header {
-  text-align: center;
+/* Busqueda */
+.section-busqueda h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
   margin-bottom: 1.5rem;
 }
 
-.section-busqueda h2 {
-  font-size: 1.25rem;
-  margin-bottom: 0.75rem;
-}
-
 .search-bar {
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
+  position: relative;
 }
 
+/* Listado de Resultados */
 .resultados-list {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 1rem;
+}
+
+.resultados-list p {
+  color: var(--text-muted);
+  text-align: center;
+  padding: 2rem;
+  background: var(--surface);
+  border-radius: 12px;
+  border: 1px dashed var(--border);
 }
 
 .profesional-card {
-  background: white;
-  padding: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  background: var(--surface);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  padding: 1.5rem;
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.profesional-card:hover {
+  transform: translateY(-4px) scale(1.01);
+  background: var(--surface-hover);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
 .profesional-card__name {
-  margin: 0 0 0.5rem;
+  font-size: 1.25rem;
+  color: #fff;
+  font-weight: 600;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-.profesional-card__oficio,
-.profesional-card__contacto,
+.profesional-card__oficio {
+  color: #a855f7;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.profesional-card__contacto {
+  color: var(--text-main);
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  display: inline-block;
+  width: fit-content;
+  font-size: 0.9rem;
+}
+
 .profesional-card__ubicacion {
-  margin: 0.25rem 0;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.profesional-card__descripcion {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+  line-height: 1.5;
+  border-top: 1px solid var(--border);
+  padding-top: 1rem;
+}
+
+@media (max-width: 600px) {
+  .app-container {
+    padding: 1rem;
+  }
+  .section-registro {
+    padding: 1.5rem;
+  }
 }

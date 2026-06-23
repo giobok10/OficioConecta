@@ -1,8 +1,13 @@
 const express = require('express');
 const cors = require('cors');
+const helmet = require('helmet');
 const profesionalRoutes = require('./routes/profesional.routes');
 
 const app = express();
+
+// Seguridad de cabeceras HTTP
+app.use(helmet());
+
 // Configuración profesional de CORS
 app.use(cors({
   origin: 'http://localhost:5173', // El puerto por defecto de Vite

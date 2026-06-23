@@ -29,7 +29,7 @@ Aplicaremos una **Clean Architecture** simplificada para no sobre-complicar el p
 *   **Prevención de SQL Injection:** Uso estricto de **consultas parametrizadas** o un ORM/Query Builder (como Sequelize o `pg` correctamente configurado).
 *   **Variables de Entorno:** Nunca subir credenciales al repositorio; usar archivos `.env` protegidos.
 *   **Docker Seguro:** No ejecutar contenedores como root y usar imágenes oficiales y ligeras (como `alpine`).
-*   **CORS:** Configuración correcta para permitir solo orígenes de confianza.
+*   **CORS & Cabeceras:** Configuración correcta de CORS para permitir solo orígenes de confianza y uso de `helmet` en Node.js para proteger las cabeceras HTTP.
 
 ### 5. Flujo de Trabajo (Git Flow)
 Utilizaremos un flujo simplificado para garantizar que la rama principal siempre sea estable:
