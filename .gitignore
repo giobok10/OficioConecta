@@ -1,0 +1,18 @@
+# Dependencias (pnpm)
+node_modules/
+**/node_modules/
+
+# Variables de entorno (Seguridad profesional) [6]
+.env
+backend/.env
+
+# Archivos de construcción
+dist/
+frontend/dist/
+out/
+
+# Logs y basura del sistema
+*.log
+npm-debug.log*
+pnpm-debug.log*
+.DS_Store
