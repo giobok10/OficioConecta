@@ -8,9 +8,14 @@ const app = express();
 // Seguridad de cabeceras HTTP
 app.use(helmet());
 
-// Configuración profesional de CORS
+const allowedOrigins = [process.env.FRONTEND_URL || 'http://localhost:5173'];
+if (process.env.NODE_ENV !== 'production') {
+  allowedOrigins.push('http://127.0.0.1:5173');
+}
+
+// Configuración de CORS flexible para dev y producción
 app.use(cors({
-  origin: 'http://localhost:5173', // El puerto por defecto de Vite
+  origin: allowedOrigins,
   methods: ['GET', 'POST'],
   allowedHeaders: ['Content-Type']
 }));
