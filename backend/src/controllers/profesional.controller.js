@@ -2,11 +2,11 @@ const profesionalService = require('../services/profesional.service');
 
 const registrar = async (req, res) => {
   try {
-    const { nombre_completo, oficio, contacto } = req.body;
+    const { nombre_completo, oficio, contacto, ubicacion, descripcion } = req.body;
 
     // Validación simple (KISS)
-    if (!nombre_completo || !oficio || !contacto) {
-      return res.status(400).json({ message: 'Nombre, oficio y contacto son obligatorios' });
+    if (!nombre_completo || !oficio || !contacto || !ubicacion || !descripcion) {
+      return res.status(400).json({ message: 'Todos los campos son obligatorios' });
     }
 
     const nuevoProfesional = await profesionalService.crearProfesional(req.body);

@@ -54,17 +54,19 @@ const RegistroForm = () => {
       />
       <input 
         type="text" 
-        placeholder="Ubicación (opcional)" 
+        placeholder="Ubicación" 
         className="registro-form__input"
         value={datos.ubicacion}
         onChange={(e) => setDatos({...datos, ubicacion: e.target.value})}
+        required
       />
       <textarea 
-        placeholder="Descripción de servicios (opcional)" 
+        placeholder="Descripción de servicios" 
         className="registro-form__input"
         value={datos.descripcion}
         onChange={(e) => setDatos({...datos, descripcion: e.target.value})}
         rows={3}
+        required
       />
       {mensaje && <p className="registro-form__mensaje registro-form__mensaje--ok">{mensaje}</p>}
       {error && <p className="registro-form__mensaje registro-form__mensaje--error">{error}</p>}

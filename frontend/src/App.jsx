@@ -29,24 +29,25 @@ function App() {
       <header className="header">
         <h1>OficiosConecta</h1>
       </header>
-      
-      <section className="section-registro">
-        <RegistroForm />
-      </section>
+      <div className="content-wrapper">
+        <section className="section-registro">
+          <RegistroForm />
+        </section>
 
-      <section className="section-busqueda">
-        <h2>Busca un Profesional</h2>
-        <SearchBar onSearch={handleSearch} />
-        <div className="resultados-list">
-          {resultados.length > 0 ? (
-            resultados.map(p => <ProfesionalCard key={p.id} profesional={p} />)
-          ) : busquedaRealizada ? (
-            <p>No hay resultados para esa búsqueda.</p>
-          ) : (
-            <p>Escribe un oficio o nombre para buscar.</p>
-          )}
-        </div>
-      </section>
+        <section className="section-busqueda">
+          <h2>Busca un Profesional</h2>
+          <SearchBar onSearch={handleSearch} />
+          <div className="resultados-list">
+            {resultados.length > 0 ? (
+              resultados.map(p => <ProfesionalCard key={p.id} profesional={p} />)
+            ) : busquedaRealizada ? (
+              <p className="no-results">No hay resultados para esa búsqueda.</p>
+            ) : (
+              <p className="no-results">Escribe un oficio o nombre para buscar.</p>
+            )}
+          </div>
+        </section>
+      </div>
     </main>
   );
 }
