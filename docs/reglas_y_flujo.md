@@ -5,7 +5,7 @@
 *   **Base de Datos:** PostgreSQL (Relacional).
 *   **Gestor de Paquetes:** `pnpm` (por eficiencia y velocidad).
 *   **Contenedores:** Docker y Docker Compose para desarrollo local consistente.
-*   **Nube de Despliegue:** Render (para backend/base de datos) o Vercel (frontend), priorizando una sola plataforma para simplificar.
+*   **Nube de Despliegue:** Render (para backend/frontend), NeonTech (para base de datos), priorizando una sola plataforma para simplificar.
 
 ### 2. Arquitectura y Estructura de Código
 Aplicaremos una **Clean Architecture** simplificada para no sobre-complicar el proyecto de 4 horas, dividiendo las responsabilidades claramente:
