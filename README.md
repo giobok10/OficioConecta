@@ -2,6 +2,12 @@
 
 **OficiosConecta** es una plataforma diseñada para conectar a ciudadanos con profesionales de oficios locales (plomeros, electricistas, albañiles, etc.). Este repositorio contiene el código fuente completo, implementando una solución Fullstack escalable, segura y con una interfaz de usuario premium.
 
+<div align="center">
+  <img src="./assets/view-laptop.png" alt="Vista en Escritorio" width="600"/>
+  <br/>
+  <img src="./assets/view-mobile.png" alt="Vista en Móvil" width="250"/>
+</div>
+
 El proyecto está diseñado para funcionar como una muestra de arquitectura de software y desarrollo web moderno, enfocado en las mejores prácticas de código limpio y diseño responsivo.
 
 ## 🚀 Funcionalidades
