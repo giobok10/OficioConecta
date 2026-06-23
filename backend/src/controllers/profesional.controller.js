@@ -27,4 +27,19 @@ const buscar = async (req, res) => {
   }
 };
 
-module.exports = { registrar, buscar };
+const verPerfil = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const profesional = await profesionalService.obtenerProfesionalPorId(id);
+    
+    if (!profesional) {
+      return res.status(404).json({ message: 'Profesional no encontrado' });
+    }
+    
+    res.status(200).json(profesional);
+  } catch (error) {
+    res.status(500).json({ message: 'Error al obtener el perfil' });
+  }
+};
+
+module.exports = { registrar, buscar, verPerfil };

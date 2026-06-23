@@ -24,4 +24,10 @@ const buscarProfesionales = async (termino) => {
   return rows;
 };
 
-module.exports = { crearProfesional, buscarProfesionales };
+const obtenerProfesionalPorId = async (id) => {
+  const query = 'SELECT * FROM profesionales WHERE id = $1;';
+  const { rows } = await db.query(query, [id]); // Parámetro $1 evita SQL Injection [5]
+  return rows; // Retornamos solo el objeto, no el array
+};
+
+module.exports = { crearProfesional, buscarProfesionales, obtenerProfesionalPorId };
