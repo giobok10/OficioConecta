@@ -1,0 +1,31 @@
+/* Metodología BEM: Block__Element--Modifier */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  max-width: 600px; /* Limite para pantallas grandes */
+  margin: 0 auto;
+}
+
+.registro-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 2rem;
+}
+
+.registro-form__input, .search-bar__input {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px; /* Bordes redondeados para estética moderna */
+  font-size: 16px; /* Evita zoom automático en iOS */
+}
+
+.registro-form__button {
+  background-color: #007bff;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+}

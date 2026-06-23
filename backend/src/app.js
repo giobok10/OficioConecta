@@ -3,7 +3,13 @@ const cors = require('cors');
 const profesionalRoutes = require('./routes/profesional.routes');
 
 const app = express();
-app.use(cors());
+// Configuración profesional de CORS
+app.use(cors({
+  origin: 'http://localhost:5173', // El puerto por defecto de Vite
+  methods: ['GET', 'POST'],
+  allowedHeaders: ['Content-Type']
+}));
+
 app.use(express.json()); // Middleware para parsear JSON
 
 // Rutas

@@ -19,3 +19,9 @@ graph TD
 - **Decisión:** Se utilizará el operador `ILIKE` de PostgreSQL con comodines (`%`).
 - **Razón:** Para permitir que los ciudadanos encuentren resultados aunque no escriban el nombre exacto del oficio o usen minúsculas (ej: buscar "plom" encontrará "Plomero"). 
 - **Impacto:** Mejora la usabilidad y evita que el sistema parezca que no funciona
+
+> **Estrategia Frontend (RNF-01):** Se utilizará un enfoque **Mobile-first** con CSS Flexbox para asegurar que la interfaz sea intuitiva en dispositivos móviles antes de escalar a escritorio.
+
+### Seguridad y Comunicación (CORS)
+- **Decisión:** Se configuró CORS en el backend para restringir el acceso únicamente al origen `http://localhost:5173`.
+- **Razón:** Cumplir con el estándar de seguridad de navegadores y prevenir peticiones no autorizadas de dominios externos.
